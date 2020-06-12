@@ -1,0 +1,166 @@
+openapi: 3.0.1
+info:
+  title: Quotes
+  description: The API for managing Quotes
+  contact:
+    email: mekhalajoshi2@gmail.com
+  version: 1.0.0
+tags:
+- name: Quote
+  description: launchcode developer challenge
+paths:
+  /quote:
+    get:
+      tags:
+      - Quote
+      summary: Get list of Todo items
+      description: Returns list of Todo items
+      responses:
+        200:
+          description: successful operation
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              description: "'*' - Allows CORs request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuoteList'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Todo item not found
+          content: {}
+        500:
+          description: Internal server error
+          content: {}
+    post:
+      tags:
+      - Quote
+      summary: Create quote
+      description: Creates a new quote
+      requestBody:
+        description: ID of quote item to return
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Quote'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              description: "'*' - Allows CORs request."
+        500:
+          description: Internal server error
+          content: {}
+  /quote/{quoteId}:
+    get:
+      tags:
+      - Quote
+      summary: Find quote by ID
+      description: Returns details of quote
+      parameters:
+      - name: quoteId
+        in: path
+        description: ID of quote to return
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              description: "'*' - Allows CORs request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuoteDetails'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Quote item not found
+          content: {}
+        500:
+          description: Internal server error
+          content: {}
+components:
+  schemas:
+    QuoteDetails:
+      type: object
+      properties:
+        quoteId:
+          type: string
+        from:
+          type: string
+        destination:
+          type: string
+        departDate:
+          type: string 
+          format: date
+        returnDate:
+          type: string 
+          format: date
+        people:
+          type: integer
+        transportation:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+        price:
+          type: number
+    Quote:
+      type: object
+      properties:
+        quoteId:
+          type: string
+        from:
+          type: string
+        destination:
+          type: string
+        departDate:
+          type: string 
+          format: date
+        returnDate:
+          type: string 
+          format: date
+        people:
+          type: integer
+        transportation:
+          type: string
+        name:
+          type: string
+    QouteListItem:
+      type: object
+      properties:
+        quoteId:
+          type: string
+        name:
+          type: string
+        destination:
+          type: string
+        price:
+          type: number
+    QuoteList:
+      type: object
+      properties:
+        quoteItems:
+          type: array
+          description: The list of quotes
+          items:
+             $ref: '#/components/schemas/QouteListItem'
