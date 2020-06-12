@@ -1,0 +1,15 @@
+{
+  "name": "launchcode-lambda",
+  "version": "1.0.0",
+  "description": "quotes service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mekhalajsohi2@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0"
+  }
+}
