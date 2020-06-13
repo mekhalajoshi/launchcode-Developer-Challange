@@ -15,6 +15,12 @@ export function getDetails() {
 export function getQuoteDetailsSuccess(data) {
   return { type: types.GET_QUOTE_DETAILS_SUCCESS, data };
 }
+export function postQuote(payload) {
+  return { type: types.POST_QUOTE, payload };
+}
+// export function postQuoteSuccess(payload) {
+//   return { type: types.POST_QUOTE_SUCCESS, payload };
+// }
 
 export function getQuoteList() {
   return function (dispatch) {
@@ -32,6 +38,17 @@ export function getQuoteDetails(quoteId) {
     dispatch(getDetails());
     return dataApi.getDetails(quoteId).then((data) => {
       dispatch(getQuoteDetailsSuccess(data));
+    }).catch((error) => {
+      // TODO: handle Error loadDataError
+      throw error;
+    });
+  };
+}
+
+export function postQuoteApi(payload) {
+  return function (dispatch) {
+    return dataApi.postApi(payload).then(() => {
+      dispatch(getQuoteList());
     }).catch((error) => {
       // TODO: handle Error loadDataError
       throw error;

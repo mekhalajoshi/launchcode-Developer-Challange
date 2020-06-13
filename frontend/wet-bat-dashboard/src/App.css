@@ -6,6 +6,8 @@
   display:flex;
   align-items: center;
   padding: 1rem;
+  width: 400px;
+  box-sizing: border-box;
 }
 .pending-card-header-right{
   margin-left: auto;
@@ -23,4 +25,12 @@
 .MuiTableCell-root{
   font-size: 0.8rem !important;
   padding: 4px 20px 4px 16px !important;
+}
+.quote-form-container{
+  display: grid;
+  grid-template-columns:100px 100px;
+  grid-gap: 10px;
+}
+.MuiTableContainer-root{
+  width:400px !important;
 }

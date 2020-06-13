@@ -27,3 +27,15 @@ export async function getDetails(quoteId) {
 
   // return data;
 }
+
+export async function postApi(payload) {
+  console.log('-------WebApi Post QUOTES--------');
+  const baseUrl = 'https://pmohxz5xki.execute-api.us-east-1.amazonaws.com/prod/quote';
+  const url = `${baseUrl}/`;
+
+  return axios.post(url, JSON.stringify(payload))
+    .then(handleResponse)
+    .catch(handleError);
+
+  // return data;
+}

@@ -18,15 +18,9 @@ import '../App.css';
 import QuoteDetailsModal from './QuoteDetailsModal';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: theme.spacing(50),
-      height: theme.spacing(45),
-    },
-    fontSize: '25px',
+  table: {
+    width: '400px',
+    // backgroundColor: 'pink',
   },
   typography: {
     marginLeft: theme.spacing(1),
@@ -50,22 +44,23 @@ const QuoteList = () => {
 
   useEffect(() => {
     dispatch(quoteActions.getQuoteList());
-  }, [dispatch]);
+  }, []);
 
   const data = useSelector((state) => state.quotes);
   // console.log(data.quoteItems);
 
   return (
-    <div className={classes.root}>
-      <Paper elevation={2}>
+    <div>
+
+      <TableContainer component={Paper}>
         <div className="pending-card-header">
           <RestoreIcon color="primary" />
           <Typography className={classes.typography}>Pending Quotes</Typography>
           <div className="pending-card-header-right"><ReplayOutlinedIcon color="primary" /></div>
         </div>
         <Divider />
-        <TableContainer />
-        <Table size="small">
+
+        <Table className={classes.table} size="small">
           <TableHead>
             <TableRow>
               <TableCell align="center">ID #</TableCell>
@@ -103,13 +98,14 @@ const QuoteList = () => {
               ),
             )}
           </TableBody>
+
         </Table>
-        <QuoteDetailsModal
-          onClose={handleClose}
-          quoteDetails={data.quoteDetails}
-          open={open}
-        />
-      </Paper>
+      </TableContainer>
+      <QuoteDetailsModal
+        onClose={handleClose}
+        quoteDetails={data.quoteDetails}
+        open={open}
+      />
     </div>
 
   );
