@@ -1,3 +1,7 @@
+:root {
+  --blue:#5F6CAF;
+  --green:#5BBFBA;
+}
 .pending-card-header{
   display:flex;
   align-items: center;
@@ -8,4 +12,15 @@
 }
 .pending-card-header-text{
   margin-left: 1rem;
+  color: var(--blue)
+}
+.MuiTableCell-root {
+  border-bottom: none !important;
+}
+.MuiSvgIcon-colorPrimary {
+  color:var(--green) !important;
+}
+.MuiTableCell-root{
+  font-size: 0.8rem !important;
+  padding: 4px 20px 4px 16px !important;
 }

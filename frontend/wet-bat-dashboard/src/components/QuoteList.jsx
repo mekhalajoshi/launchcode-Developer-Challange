@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import RestoreIcon from '@material-ui/icons/Restore';
 import ReplayOutlinedIcon from '@material-ui/icons/ReplayOutlined';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,13 +13,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Dialog from '@material-ui/core/Dialog';
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogActions from '@material-ui/core/DialogActions';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import * as quoteActions from '../redux/actions/quoteActions';
+import '../App.css';
+import QuoteDetailsModal from './QuoteDetailsModal';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,99 +24,60 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
       width: theme.spacing(50),
-      height: theme.spacing(50),
+      height: theme.spacing(45),
     },
+    fontSize: '25px',
   },
   typography: {
     marginLeft: theme.spacing(1),
+    color: '#5F6CAF',
   },
 }));
 
-const styles = (theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(2),
-  },
-  closeButton: {
-    position: 'absolute',
-    right: theme.spacing(1),
-    top: theme.spacing(1),
-    color: theme.palette.grey[500],
-  },
-});
-
-const DialogTitle = withStyles(styles)((props) => {
-  const {
-    children, classes, onClose, ...other
-  } = props;
-  return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
-      {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </MuiDialogTitle>
-  );
-});
-const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
-}))(MuiDialogContent);
-
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-  },
-}))(MuiDialogActions);
-
 const QuoteList = () => {
   const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  const classes = useStyles();
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
   const handleClose = () => {
     setOpen(false);
   };
 
-  const classes = useStyles();
-  const dispatch = useDispatch();
+  const handleClickOpen = (quoteId) => {
+    dispatch(quoteActions.getQuoteDetails(quoteId));
+    setOpen(true);
+  };
 
   useEffect(() => {
     dispatch(quoteActions.getQuoteList());
-  }, []);
+  }, [dispatch]);
 
   const data = useSelector((state) => state.quotes);
-  console.log(data.quoteItems);
+  // console.log(data.quoteItems);
 
   return (
     <div className={classes.root}>
       <Paper elevation={2}>
         <div className="pending-card-header">
-          <RestoreIcon />
+          <RestoreIcon color="primary" />
           <Typography className={classes.typography}>Pending Quotes</Typography>
-          <div className="pending-card-header-right"><ReplayOutlinedIcon /></div>
+          <div className="pending-card-header-right"><ReplayOutlinedIcon color="primary" /></div>
         </div>
         <Divider />
         <TableContainer />
-        <Table>
+        <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell>ID #</TableCell>
-              <TableCell>NAME</TableCell>
-              <TableCell>DESTINATION</TableCell>
-              <TableCell>PRICE</TableCell>
+              <TableCell align="center">ID #</TableCell>
+              <TableCell align="center">NAME</TableCell>
+              <TableCell align="center">DESTINATION</TableCell>
+              <TableCell align="center">PRICE</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data.quoteItems.map(
               (row) => (
-                <TableRow onClick={handleClickOpen} hover key={row.id}>
-
+                <TableRow onClick={() => handleClickOpen(row.id)} hover key={row.id}>
                   <TableCell component="th" scope="row">
                     {' '}
                     {row.id}
@@ -142,40 +99,17 @@ const QuoteList = () => {
                     {row.price}
                     {' '}
                   </TableCell>
-
                 </TableRow>
               ),
             )}
-
           </TableBody>
         </Table>
-
+        <QuoteDetailsModal
+          onClose={handleClose}
+          quoteDetails={data.quoteDetails}
+          open={open}
+        />
       </Paper>
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
-        </DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
-            lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-            auctor fringilla.
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
-          </Button>
-        </DialogActions>
-      </Dialog>
     </div>
 
   );
