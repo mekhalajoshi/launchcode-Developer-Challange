@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/launchcode-Developer-Challange/static/css/main.0e6f50c2.chunk.css",
+    "main.js": "/launchcode-Developer-Challange/static/js/main.c2442060.chunk.js",
+    "main.js.map": "/launchcode-Developer-Challange/static/js/main.c2442060.chunk.js.map",
+    "runtime-main.js": "/launchcode-Developer-Challange/static/js/runtime-main.a51d208d.js",
+    "runtime-main.js.map": "/launchcode-Developer-Challange/static/js/runtime-main.a51d208d.js.map",
+    "static/js/2.82638130.chunk.js": "/launchcode-Developer-Challange/static/js/2.82638130.chunk.js",
+    "static/js/2.82638130.chunk.js.map": "/launchcode-Developer-Challange/static/js/2.82638130.chunk.js.map",
+    "index.html": "/launchcode-Developer-Challange/index.html",
+    "precache-manifest.51049d42068c346f9990f0fe0a3971ea.js": "/launchcode-Developer-Challange/precache-manifest.51049d42068c346f9990f0fe0a3971ea.js",
+    "service-worker.js": "/launchcode-Developer-Challange/service-worker.js",
+    "static/css/main.0e6f50c2.chunk.css.map": "/launchcode-Developer-Challange/static/css/main.0e6f50c2.chunk.css.map",
+    "static/js/2.82638130.chunk.js.LICENSE.txt": "/launchcode-Developer-Challange/static/js/2.82638130.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a51d208d.js",
+    "static/js/2.82638130.chunk.js",
+    "static/css/main.0e6f50c2.chunk.css",
+    "static/js/main.c2442060.chunk.js"
+  ]
+}
