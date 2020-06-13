@@ -20,7 +20,6 @@ import QuoteDetailsModal from './QuoteDetailsModal';
 const useStyles = makeStyles((theme) => ({
   table: {
     width: '400px',
-    // backgroundColor: 'pink',
   },
   typography: {
     marginLeft: theme.spacing(1),
@@ -47,7 +46,6 @@ const QuoteList = () => {
   }, []);
 
   const data = useSelector((state) => state.quotes);
-  // console.log(data.quoteItems);
 
   return (
     <div>

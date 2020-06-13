@@ -19,9 +19,7 @@ import {
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import MenuItem from '@material-ui/core/MenuItem';
-
 import * as quoteActions from '../redux/actions/quoteActions';
-// import data from '../initialData';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -118,8 +116,6 @@ const QuotesForm = () => {
       name,
     };
     dispatch(quoteActions.postQuoteApi(payload)).then(() => setOpen(true));
-
-    // setOpen(true);
     clearForm();
   };
 
@@ -189,7 +185,6 @@ const QuotesForm = () => {
       label: 'Calgary',
     },
   ];
-  // console.log(data.apiResponseStatus);
   return (
     <Paper className={classes.root}>
       <div className="pending-card-header">
@@ -335,7 +330,6 @@ const QuotesForm = () => {
         </Alert>
       </Snackbar>
     </Paper>
-  // </div>
   );
 };
 
