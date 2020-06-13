@@ -18,9 +18,9 @@ export function getQuoteDetailsSuccess(data) {
 export function postQuote(payload) {
   return { type: types.POST_QUOTE, payload };
 }
-// export function postQuoteSuccess(payload) {
-//   return { type: types.POST_QUOTE_SUCCESS, payload };
-// }
+export function clearApiResponse() {
+  return { type: types.CLEAR_API_RESPONSE_STATUS };
+}
 
 export function getQuoteList() {
   return function (dispatch) {

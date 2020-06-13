@@ -59,5 +59,6 @@ const data = {
 
   },
   isLoading: false,
+  apiResponseStatus: '',
 };
 export default data;
