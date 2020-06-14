@@ -1,0 +1,10 @@
+export { default as Quotes } from './Quotes';
+export { default as Dashboard } from './Dashboard';
+export { default as Leads } from './Leads';
+export { default as NotFound } from './NotFound';
+export { default as Invoices } from './Invoices';
+export { default as Support } from './Support';
+export { default as Analytics } from './Analytics';
+export { default as Team } from './Team';
+export { default as Admin } from './Admin';
+export { default as Tours } from './Tours';
