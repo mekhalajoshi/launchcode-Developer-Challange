@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '30px',
     backgroundColor: theme.palette.brand.actionGreen,
     color: theme.palette.white,
+    '&:hover': {
+      backgroundColor: theme.palette.brand.blue,
+    },
   },
 }));
 
@@ -211,7 +214,7 @@ const QuotesForm = () => {
         <form className={classes.form} autoComplete="off">
           <Grid
             container
-            spacing={4}
+            spacing={2}
           >
             <Grid
               item
