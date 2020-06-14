@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+:root {
+  --blue:#5F6CAF;
+  --green:#5BBFBA;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+  height:40px;
+  width :100px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.pending-card-header{
+  display:flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem;
+  width: 400px;
+  box-sizing: border-box;
 }
-
-.App-link {
-  color: #61dafb;
+.pending-card-header-right{
+  margin-left: auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pending-card-header-text{
+  margin-left: 1rem;
+  color: var(--blue)
+}
+.MuiTableCell-root {
+  border-bottom: none !important;
+}
+.MuiSvgIcon-colorPrimary {
+  color:var(--green) !important;
+}
+.MuiTableCell-root{
+  font-size: 0.8rem !important;
+  padding: 4px 20px 4px 16px !important;
+}
+.quote-form-container{
+  display: grid;
+  grid-template-columns:100px 100px;
+  grid-gap: 10px;
+}
+.MuiTableContainer-root{
+  width:400px !important;
+}
+.quote-form-container{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.MuiButton-root{
+  border-radius: 40px !important;
+  margin:10px 5px !important;
+}
+.MuiButton-containedPrimary{
+  background-color: var(--green) !important;
 }
