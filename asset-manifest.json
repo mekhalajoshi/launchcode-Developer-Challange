@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/launchcode-Developer-Challange/static/css/main.08eb4d02.chunk.css",
-    "main.js": "/launchcode-Developer-Challange/static/js/main.6dc5f8d0.chunk.js",
-    "main.js.map": "/launchcode-Developer-Challange/static/js/main.6dc5f8d0.chunk.js.map",
+    "main.css": "/launchcode-Developer-Challange/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/launchcode-Developer-Challange/static/js/main.09884a01.chunk.js",
+    "main.js.map": "/launchcode-Developer-Challange/static/js/main.09884a01.chunk.js.map",
     "runtime-main.js": "/launchcode-Developer-Challange/static/js/runtime-main.a51d208d.js",
     "runtime-main.js.map": "/launchcode-Developer-Challange/static/js/runtime-main.a51d208d.js.map",
-    "static/js/2.282fd740.chunk.js": "/launchcode-Developer-Challange/static/js/2.282fd740.chunk.js",
-    "static/js/2.282fd740.chunk.js.map": "/launchcode-Developer-Challange/static/js/2.282fd740.chunk.js.map",
+    "static/js/2.2cfd3d91.chunk.js": "/launchcode-Developer-Challange/static/js/2.2cfd3d91.chunk.js",
+    "static/js/2.2cfd3d91.chunk.js.map": "/launchcode-Developer-Challange/static/js/2.2cfd3d91.chunk.js.map",
     "index.html": "/launchcode-Developer-Challange/index.html",
-    "precache-manifest.b039dfcb8e9c44fa449d8b6394ace6d5.js": "/launchcode-Developer-Challange/precache-manifest.b039dfcb8e9c44fa449d8b6394ace6d5.js",
+    "precache-manifest.3f38319f3e466344a3948c82efbe8e23.js": "/launchcode-Developer-Challange/precache-manifest.3f38319f3e466344a3948c82efbe8e23.js",
     "service-worker.js": "/launchcode-Developer-Challange/service-worker.js",
-    "static/css/main.08eb4d02.chunk.css.map": "/launchcode-Developer-Challange/static/css/main.08eb4d02.chunk.css.map",
-    "static/js/2.282fd740.chunk.js.LICENSE.txt": "/launchcode-Developer-Challange/static/js/2.282fd740.chunk.js.LICENSE.txt"
+    "static/css/main.5ecd60fb.chunk.css.map": "/launchcode-Developer-Challange/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.2cfd3d91.chunk.js.LICENSE.txt": "/launchcode-Developer-Challange/static/js/2.2cfd3d91.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a51d208d.js",
-    "static/js/2.282fd740.chunk.js",
-    "static/css/main.08eb4d02.chunk.css",
-    "static/js/main.6dc5f8d0.chunk.js"
+    "static/js/2.2cfd3d91.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.09884a01.chunk.js"
   ]
 }
