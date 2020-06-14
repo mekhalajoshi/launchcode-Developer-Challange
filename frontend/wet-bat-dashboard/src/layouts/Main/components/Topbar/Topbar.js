@@ -82,6 +82,8 @@ const Topbar = (props) => {
             height="50px"
           />
         </RouterLink>
+        
+Hello
         <div className={classes.flexGrow} />
         <div className={classes.search}>
           <div className={classes.searchIcon}>
