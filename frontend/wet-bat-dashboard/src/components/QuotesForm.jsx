@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 const QuotesForm = () => {
   const classes = useStyles();
   const data = useSelector((state) => state.quotes);
+  const dispatch = useDispatch();
 
   const [from, setFrom] = useState('');
   const [destination, setDestination] = useState('');
@@ -48,8 +49,6 @@ const QuotesForm = () => {
   const [people, setPeople] = useState('');
   const [transportation, setTransportation] = useState('');
   const [name, setName] = useState('');
-
-  const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     switch (e.target.name) {
@@ -266,6 +265,7 @@ const QuotesForm = () => {
               }}
             />
           </MuiPickersUtilsProvider>
+
           <TextField
             required
             id="people"

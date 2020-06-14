@@ -46,3 +46,6 @@
   border-radius: 40px !important;
   margin:10px 5px !important;
 }
+.MuiButton-containedPrimary{
+  background-color: var(--green) !important;
+}
