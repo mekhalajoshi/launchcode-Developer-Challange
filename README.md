@@ -64,6 +64,7 @@ Workflow diagram from the app -
 * pick-up / drop-off locations in transportation invoices are the same as in the quote table invoices.
 * The schema for all transportation services like shuttles, taxies or rental cars are assumed to be the same.
 * A single quote may have multiple travel invoices (multi-city travel).
+* For the purposes of this MVP form validation has been skipped. Moving forward creates quotes form will have to be validated.
 
 ## Moving forward..
 * Add a detailed quotes form where a back office agent can create a quote and register new customers in the same form.
