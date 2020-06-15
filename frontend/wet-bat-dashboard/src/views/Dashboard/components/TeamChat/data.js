@@ -25,4 +25,10 @@ export default [
     imageUrl: '/images/avatars/avatar_4.png',
     msg: 'Hey! I want to pace my package',
   },
+  {
+    id: uuid(),
+    name: 'Jane Smith',
+    imageUrl: '/images/avatars/avatar_5.png',
+    msg: 'Hey! I want to pace my package',
+  },
 ];

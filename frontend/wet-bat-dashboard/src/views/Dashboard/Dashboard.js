@@ -11,6 +11,8 @@ import {
   Revenue,
   PotentialRevenue,
   CloseRatios,
+  Popular,
+  TeamChat,
 } from './components';
 
 const useStyles = makeStyles((theme) => ({
@@ -64,7 +66,24 @@ const Dashboard = () => {
         >
           <NewLeads />
         </Grid>
-
+        <Grid
+          item
+          lg={9}
+          md={122}
+          xl={8}
+          xs={12}
+        >
+          <Popular />
+        </Grid>
+        <Grid
+          item
+          lg={3}
+          md={6}
+          xl={4}
+          xs={12}
+        >
+          <TeamChat />
+        </Grid>
         <Grid
           item
           lg={4}
