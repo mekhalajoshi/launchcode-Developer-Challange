@@ -5,8 +5,9 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import { Typography } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { Typography, Divider } from '@material-ui/core';
+
 import PropTypes from 'prop-types';
 
 const styles = (theme) => ({
@@ -23,6 +24,7 @@ const styles = (theme) => ({
   tablecell: {
     fontSize: '40pt',
   },
+
 });
 
 const DialogTitle = withStyles(styles)((props) => {
@@ -47,71 +49,123 @@ const DialogContent = withStyles((theme) => ({
   },
 }))(MuiDialogContent);
 
+const useStyles = makeStyles((theme) => ({
+  detailsHeading: {
+    display: 'inline-block',
+    fontWeight: theme.typography.fontWeightBold,
+  },
+}));
+
 const QuoteDetailsModal = (props) => {
   const {
     onClose, open, quoteDetails,
   } = props;
 
+  const classes = useStyles();
+
   return (
 
-    <Dialog onClose={onClose} aria-labelledby="customized-dialog-title" open={open}>
+    <Dialog
+      fullWidth="true"
+      maxWidth="sm"
+      onClose={onClose}
+      aria-labelledby="customized-dialog-title"
+      open={open}
+    >
       <DialogTitle id="customized-dialog-title" onClose={onClose}>
-        Quote Details
+        Quote ID:
+        {' '}
+        {quoteDetails.quote_id}
       </DialogTitle>
       <DialogContent dividers>
 
-        <Typography gutterBottom>
-          Quoteid:
-          {' '}
-          {quoteDetails.quote_id}
-          <br />
-          Name:
-          {' '}
-          {quoteDetails.name}
-          <br />
-          Phone Number:
-          {' '}
-          {quoteDetails.phone}
-          <br />
-          Address:
-          {' '}
-          {quoteDetails.address}
-          <br />
-          Email:
-          {' '}
-          {quoteDetails.email}
-          <br />
-          Transportation
-          {' '}
-          {quoteDetails.transportation}
-          <br />
-          Depatrute Location:
-          {' '}
-          {' '}
-          {quoteDetails.depatrute_location}
-          <br />
-          Destination Location:
-          {' '}
-          {' '}
-          {quoteDetails.destination_location}
-          <br />
-          Departure Date:
-          {' '}
-          {quoteDetails.departure_date}
-          <br />
-          Return Date
-          {' '}
-          {quoteDetails.return_date}
-          <br />
-          Number of Travellers:
-          {' '}
-          {quoteDetails.number_of_travellers}
-          <br />
-          Price:
-          {' '}
-          {quoteDetails.price}
-          <br />
+        <Typography variant="h6">
+          Contact Details:
         </Typography>
+        <Divider />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Name:
+        </Typography>
+        {' '}
+        {quoteDetails.name}
+        <br />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Phone Number:
+        </Typography>
+        {' '}
+        {quoteDetails.phone}
+        <br />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Address:
+        </Typography>
+        {' '}
+        {quoteDetails.address}
+        <br />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Email:
+        </Typography>
+        {' '}
+        {quoteDetails.email}
+        <br />
+        <br />
+        <Typography variant="h6">
+          Additional Services:
+        </Typography>
+        <Divider />
+
+        <Typography className={classes.detailsHeading} variant="body1">
+          Transportation:
+        </Typography>
+        {' '}
+        {quoteDetails.transportation}
+        <br />
+        <br />
+        <Typography variant="h6">
+          Travel Details:
+        </Typography>
+        <Divider />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Depatrute Location:
+        </Typography>
+        {' '}
+        {quoteDetails.depatrute_location}
+        <br />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Destination Location:
+        </Typography>
+        {' '}
+        {quoteDetails.destination_location}
+        <br />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Departure Date:
+        </Typography>
+        {' '}
+        {quoteDetails.departure_date}
+        <br />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Return Date:
+        </Typography>
+        {' '}
+        {quoteDetails.return_date}
+        <br />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Number of Travellers:
+        </Typography>
+        {' '}
+        {quoteDetails.number_of_travellers}
+        <br />
+        <br />
+        <Typography variant="h6">
+          Total:
+        </Typography>
+        <Divider />
+        <Typography className={classes.detailsHeading} variant="body1">
+          Price:
+        </Typography>
+        {' '}
+        {quoteDetails.price}
+        <br />
+        <br />
 
       </DialogContent>
     </Dialog>

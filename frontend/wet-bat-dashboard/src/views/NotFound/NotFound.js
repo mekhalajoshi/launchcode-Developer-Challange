@@ -1,21 +1,22 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(4)
+    padding: theme.spacing(4),
   },
   content: {
     paddingTop: 150,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   image: {
     marginTop: 50,
     display: 'inline-block',
     maxWidth: '100%',
-    width: 560
-  }
+    width: 560,
+  },
 }));
 
 const NotFound = () => {
@@ -44,7 +45,7 @@ const NotFound = () => {
             <img
               alt="Under development"
               className={classes.image}
-              src="/images/page_not_found.svg"
+              src={`${process.env.PUBLIC_URL}/images/page_not_found.svg`}
             />
           </div>
         </Grid>

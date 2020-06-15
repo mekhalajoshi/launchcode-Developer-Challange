@@ -3,18 +3,24 @@ const mysql = require('mysql2/promise');
 
 exports.postQuote = async(req, context, callback) => {
     console.log("**************** post-quotes-service ********************");
-console.log(req);
-const event = JSON.parse(req.body);
-    const connection = await mysql.createConnection({
+    console.log("request body"+JSON.parse(req.body));
+    const event = JSON.parse(req.body);
+
+    let connection;
+    try {
+     connection = await mysql.createConnection({
         host: 'launchcode-database.clh9cecxblpu.us-east-1.rds.amazonaws.com',
         user: 'admin',
         password: 'launchcode',
         database: "mydb",
     });
+    } catch (e) {
+    console.log(e);
+    }
+   
 
     let responseBody = "";
     let statusCode = 0;
-    console.log(event.from);
     
     const [from] = await connection.execute("Select l.location_id	from locations l where l.location = ?",[event.from]);
     const [destination] = await connection.execute("Select l.location_id	from locations l where l.location = ?",[event.destination]);

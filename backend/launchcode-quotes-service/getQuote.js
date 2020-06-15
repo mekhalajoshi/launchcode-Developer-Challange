@@ -17,7 +17,7 @@ exports.getQuote = async(event, context, callback) => {
   try {
     const [rows] = await connection.execute(query,[event.quoteId]);
     responseBody = {
-      quoteItems: rows,
+      quoteDetails: rows[0],
     };
     statusCode = '200';
   }
