@@ -19,7 +19,7 @@ The front-end web application is built with React. It uses React Redux for state
 Backend:
 The back-end is built on AWS's serverless architectures. It uses the following AWS services; AWS RDS, AWS Lambda, AWS API Gateway. 
           <p align="center">
-            <img src="frontend/wet-bat-dashboard/public/AWS serverless architecture.png" margin="auto">
+            <img src="frontend/wet-bat-dashboard/public/AWS serverless architecture.jpeg" margin="auto">
           </p>
 
 The Serverless Architecture uses AWS Lambda in conjunction with Amazon API Gateway, Amazon RDS(MySQL), to build the backend of the application.
@@ -28,7 +28,7 @@ I have also included the .yaml document for the API and the Node.js files for th
 ## Database Schema
 The following is the databse schema of the Quotes-Service
             <p align="center">
-              <img src="frontend/wet-bat-dashboard/public/databaseSchema.jpeg" margin="auto">
+              <img src="frontend/wet-bat-dashboard/public/databaseSchema.png" margin="auto">
             </p>
 ## Tables
 **quotes:** The quotes table stores information about quotes. When an agent creates a quote on the front end the quote gets stored in this table. One quote can have multiple travel or transportation invoices(multi city travel or staggered travel dates). 
@@ -46,6 +46,7 @@ The following is the databse schema of the Quotes-Service
 **agents:** The contact information of all back office agents who use the dashboard is stored in the agents table.
 
 ## Workflows
+Workflow diagram from the app -
              <p align="center">
               <img src="frontend/wet-bat-dashboard/public/sequenceDiagram.jpeg" margin="auto">
             </p>
